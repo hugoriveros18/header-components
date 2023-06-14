@@ -21,9 +21,6 @@ export default function ListaEnlaces({listaEnlaces}:ListaEnlacesProps) {
   //STATES
   const [listaActualEnlaces, setListaActualEnlaces] = useState<Enlace[]>([]);
 
-  console.log('listaActualEnlaces', listaActualEnlaces);
-  console.log('listaEnlaces', listaEnlaces);
-
   //EFFECTS
   useEffect(() => {
     setListaActualEnlaces(listaEnlaces);

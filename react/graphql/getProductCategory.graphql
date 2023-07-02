@@ -1,0 +1,16 @@
+query getProductCategory ($productsId: [ID!]) {
+  productsByIdentifier(
+    field: id,
+    values: $productsId
+  ) @context(provider: "vtex.search-graphql") {
+    productId
+    productName
+    linkText
+    categoryTree {
+      id
+    }
+  }
+}
+
+
+

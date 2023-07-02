@@ -1,0 +1,14 @@
+query getProductsReviews {
+  reviews (to:1000, status:"approved") @context(provider: "vtex.reviews-and-ratings") {
+    data {
+      productId
+      rating
+      title
+      text
+      reviewerName
+      reviewDateTime
+    }
+  }
+}
+
+

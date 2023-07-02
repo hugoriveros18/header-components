@@ -1,5 +1,18 @@
 {
   "lista-enlaces": {
     "component": "ListaEnlaces"
+  },
+  "top-banner": {
+    "component": "TopBanner"
+  },
+  "destacados": {
+    "component": "Destacado"
+  },
+  "search-custom": {
+    "component": "BusquedaCustom"
+  },
+  "reviews-summary": {
+    "component": "ReviewsLibros",
+    "render": "client"
   }
 }

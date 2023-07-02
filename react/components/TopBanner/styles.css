@@ -1,0 +1,180 @@
+.topBanner__generalContainer {
+  position: relative;
+  width   : 100%;
+}
+
+.topBanner__linkContainer{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.topBanner__linkContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.topBanner__temporizadorContainer {
+  position       : absolute;
+  top            : 0;
+  left: 78%;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  gap            : 2px;
+  height         : 100%;
+}
+
+.temporizador__titulo {
+  width: 100%;
+}
+
+.temporizador__titulo p {
+  width         : 100%;
+  margin        : 0;
+  font-size     : 12px;
+  font-weight   : 900;
+  text-align    : center;
+  letter-spacing: 4px;
+}
+
+.temporizador__tiempoContenedor {
+  width  : 100%;
+  display: flex;
+  gap    : 14px;
+}
+
+.temporizador__tiempoCasilla {
+  display       : flex;
+  flex-direction: column;
+  gap           : 6px;
+}
+
+.tiempoCasilla__numero {
+  margin          : 0;
+  padding         : 0 6px;
+  font-size       : 22px;
+  font-weight     : 900;
+  text-align      : center;
+  border-radius   : 2px;
+}
+
+.tiempoCasilla__descripcion {
+  width      : 100%;
+  margin     : 0;
+  font-size  : 10px;
+  font-weight: 900;
+  font-style : italic;
+  text-align : center;
+}
+
+@media screen and (max-width: 2000px) {
+  .temporizador__titulo p {
+    font-size     : 8px;
+  }
+
+  .temporizador__tiempoContenedor {
+    gap    : 10px;
+  }
+
+  .temporizador__tiempoCasilla {
+    gap           : 4px;
+  }
+
+  .tiempoCasilla__numero {
+    font-size       : 17px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 7.2px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .temporizador__titulo p {
+    font-size     : 7px;
+  }
+  .tiempoCasilla__descripcion {
+    font-size  : 6.5px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+
+  .temporizador__tiempoCasilla {
+    gap           : 2px;
+  }
+
+  .tiempoCasilla__numero {
+    font-size       : 14px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 7px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .topBanner__temporizadorContainer {
+    gap: 1px;
+  }
+
+  .temporizador__titulo p {
+    font-size     : 6px;
+  }
+
+  .tiempoCasilla__numero {
+    font-size       : 12px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 6px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+
+  .tiempoCasilla__numero {
+    font-size       : 10px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .temporizador__titulo p {
+    font-size     : 5px;
+  }
+
+  .tiempoCasilla__numero {
+    font-size       : 8px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 4px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+
+  .topBanner__temporizadorContainer {
+    left: 56%;
+  }
+
+  .temporizador__titulo p {
+    font-size     : 5px;
+  }
+
+  .tiempoCasilla__numero {
+    font-size       : 14px;
+  }
+
+  .tiempoCasilla__descripcion {
+    font-size  : 5px;
+  }
+}

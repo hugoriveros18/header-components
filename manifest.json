@@ -1,7 +1,7 @@
 {
   "vendor": "panamericana",
   "name": "header-components",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "title": "Header Components",
   "description": "General header components",
   "builders": {
@@ -11,7 +11,13 @@
     "store": "0.x"
   },
   "dependencies": {
-    "vtex.css-handles": "0.x"
+    "vtex.device-detector": "0.x",
+    "vtex.css-handles": "0.x",
+    "vtex.search-page-context": "0.x",
+    "vtex.search-graphql": "0.x"
+  },
+  "peerDependencies": {
+    "vtex.reviews-and-ratings": "3.x"
   },
   "registries": [
     "smartcheckout"

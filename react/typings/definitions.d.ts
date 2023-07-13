@@ -56,4 +56,33 @@ type DestacadoLinkProps = {
   colorLineaDivisoria: string
 }
 
+type PosiblesConfiguraciones = 'Por Fechas' | 'Activacion Manual'
+
+interface TipoConfiguracion {
+  posiblesConfiguraciones: PosiblesConfiguraciones
+  fechaInicio?: string
+  fechaFinal?: string
+  estaActivo?: boolean
+}
+
+interface BotonFlotante {
+  imagen: string
+  imagenMobile?: string
+  slug: string
+  tipoConfiguracion: TipoConfiguracion
+}
+
+interface BotonesFlotantesProps {
+  botonesIzquierda: BotonFlotante[]
+  botonesDerecha: BotonFlotante[]
+  botonesInferior: BotonFlotante[]
+}
+
+interface BotonLayoutProps {
+  imagen: string
+  imagenMobile?: string
+  slug: string
+  posicion: 'izquierda' | 'derecha' | 'inferior'
+}
+
 

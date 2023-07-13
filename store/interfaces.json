@@ -8,6 +8,9 @@
   "destacados": {
     "component": "Destacado"
   },
+  "botones-flotantes": {
+    "component": "BotonesFlotantes"
+  },
   "search-custom": {
     "component": "BusquedaCustom"
   },

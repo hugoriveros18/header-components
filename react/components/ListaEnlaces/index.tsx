@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useCssHandles } from 'vtex.css-handles';
 import { Link } from "vtex.render-runtime";
-import './styles.css';
 import { listaEnlacesSchema } from "../../schema/listaEnlacesSchema";
+import './styles.css';
 
 const CSS_HANDLES = [
   'listaEnlaces__generalContainer',

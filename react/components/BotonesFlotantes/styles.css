@@ -1,0 +1,72 @@
+.botonesIzquiera__listContainer {
+  left: 0;
+  padding-left: 15px;
+  bottom: 140px;
+  max-width: 12%;
+}
+
+.botonesDerecha__listContainer {
+  right: 0;
+  padding-right: 15px;
+  padding-left: 0;
+  bottom: 140px;
+  max-width: 12%;
+}
+
+.botonesInferior__listContainer {
+  padding: 0;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.botonesGeneral__listContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  z-index: 9999;
+}
+
+.botonesGeneral__itemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.botonesGeneral__itemCloseButton {
+  display: flex;
+  width: 100%;
+}
+
+.botonesGeneral__itemCloseButtonX {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #353535;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .botonesIzquiera__listContainer,
+  .botonesDerecha__listContainer {
+    max-width: 20%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .botonesIzquiera__listContainer,
+  .botonesDerecha__listContainer {
+    max-width: 30%;
+  }
+
+  .botonesIzquiera__listContainer {
+    padding-left: 5px;
+  }
+
+  .botonesDerecha__listContainer {
+    padding-right: 5px;
+  }
+}

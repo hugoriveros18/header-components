@@ -20,8 +20,7 @@ export default function DestacadoLink({
   colorTextoHover,
   colorLineaDivisoria
 }:DestacadoLinkProps) {
-  colorFondoHover
-
+  
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 

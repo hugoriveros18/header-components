@@ -63,6 +63,12 @@ export const topBannerSchema = {
       widget: {
         "ui:widget": "date-time"
       }
+    },
+    isActive: {
+      title: "¿Esta activo?",
+      description: "Si las fechas son validas pero este campo esta inactivo no se visualizará el banner.",
+      type: "boolean",
+      default: true
     }
   },
 }

@@ -118,6 +118,25 @@ function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
   //STATES
   const [isButtonActive, setIsButtonActive] = useState<boolean>(true);
 
+  //METHODS
+  const calcCloseButtonPosition = (posicion:string) => {
+    if(posicion === 'izquierda') {
+      return {
+        left: '0'
+      }
+    } else if (posicion === 'derecha') {
+      return {
+        right: '0'
+      }
+    } else {
+      return {
+        right: '10px',
+        top: '-2px',
+        transform: 'translateY(-100%)'
+      }
+    }
+  }
+
   //JSX
   if(isButtonActive) {
     return (
@@ -126,12 +145,11 @@ function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
       >
         <div
           className={`${handles.botonesGeneral__itemCloseButton}`}
-          style={{justifyContent: posicion === 'izquierda' ? 'flex-start' : 'flex-end'}}
+          style={calcCloseButtonPosition(posicion)}
         >
           <p
             className={`${handles.botonesGeneral__itemCloseButtonX}`}
             onClick={() => setIsButtonActive(false)}
-            style={{padding: posicion === 'inferior' ? '0 15px 5px 0' : '0'}}
           >
             x
           </p>

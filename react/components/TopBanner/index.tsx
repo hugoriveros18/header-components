@@ -14,7 +14,7 @@ const CSS_HANDLES = [
   'temporizador__tiempoContenedor',
   'temporizador__tiempoCasilla',
   'tiempoCasilla__numero',
-  'tiempoCasilla__descripcion',
+  'tiempoCasilla__descripcion'
 ]
 
 
@@ -26,7 +26,8 @@ export default function TopBanner({
   colorPlantilla = '#fff',
   colorTiempo = '#000',
   fechaInicio = '2023-06-14T17:19:00.000Z',
-  fechaFinal = '2023-06-17T17:19:00.000Z'
+  fechaFinal = '2023-06-17T17:19:00.000Z',
+  isActive = true
 }:TopBannerProps) {
 
   //DETECTOR DE DISPOSITIVO
@@ -47,18 +48,21 @@ export default function TopBanner({
   loading
 
   //JSX
-  if(isBannerActive) {
+  if(isBannerActive && isActive) {
     return (
       <div className={handles.topBanner__generalContainer}>
         <Link
           to={slug}
           className={handles.topBanner__linkContainer}
         >
+
+          {/* BANNER */}
           <img
             alt='Oferta Contrarreloj'
             src={device === 'phone' ? imagenMobile : imagenDesktopTablet}
           />
 
+          {/* TEMPORIZADOR */}
           <div className={handles.topBanner__temporizadorContainer}>
             <div className={handles.temporizador__titulo}>
               <p style={{color: colorPlantilla}}>{tituloTemporizador}</p>

@@ -2,7 +2,7 @@
   left: 0;
   padding-left: 15px;
   bottom: 140px;
-  max-width: 12%;
+  max-width: 8%;
 }
 
 .botonesDerecha__listContainer {
@@ -10,7 +10,7 @@
   padding-right: 15px;
   padding-left: 0;
   bottom: 140px;
-  max-width: 12%;
+  max-width: 8%;
 }
 
 .botonesInferior__listContainer {
@@ -31,14 +31,16 @@
 }
 
 .botonesGeneral__itemContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
 .botonesGeneral__itemCloseButton {
+  position: absolute;
   display: flex;
-  width: 100%;
+  width: auto;
 }
 
 .botonesGeneral__itemCloseButtonX {
@@ -47,6 +49,13 @@
   font-weight: 700;
   color: #353535;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1500px) {
+  .botonesIzquiera__listContainer,
+  .botonesDerecha__listContainer {
+    max-width: 12%;
+  }
 }
 
 @media screen and (max-width: 768px) {

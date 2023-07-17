@@ -17,6 +17,7 @@ type TopBannerProps = {
   colorTiempo: string
   fechaInicio: string
   fechaFinal: string
+  isActive: boolean
 }
 
 type TemporizadorProps = {

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCssHandles } from 'vtex.css-handles';
 import { useDevice } from 'vtex.device-detector';
+import { canUseDOM } from 'vtex.render-runtime';
 import { Link } from "vtex.render-runtime";
-import './styles.css';
 import { botonesFlotantesSchema } from "../../schema/botonesFlotantesSchema";
+import './styles.css';
 
 const CSS_HANDLES = [
   'botonesGeneral__listContainer',
@@ -44,6 +45,7 @@ export default function BotonesFlotantes({
                 return (
                   <BotonLayout
                     key={index}
+                    id={boton.id}
                     imagen={boton.imagen}
                     slug={boton.slug}
                     posicion="izquierda"
@@ -66,6 +68,7 @@ export default function BotonesFlotantes({
                 return (
                   <BotonLayout
                     key={index}
+                    id={boton.id}
                     imagen={boton.imagen}
                     slug={boton.slug}
                     posicion="derecha"
@@ -89,6 +92,7 @@ export default function BotonesFlotantes({
                 return (
                   <BotonLayout
                     key={index}
+                    id={boton.id}
                     imagen={boton.imagen}
                     imagenMobile={boton.imagenMobile}
                     slug={boton.slug}
@@ -107,7 +111,7 @@ export default function BotonesFlotantes({
 
 BotonesFlotantes.schema = botonesFlotantesSchema;
 
-function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
+function BotonLayout({id, imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
 
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
@@ -115,8 +119,13 @@ function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
   //DETECTOR DE DISPOSITIVO
   const { device } = useDevice();
 
+  //DOM VALIDATION
+  const dataSessionStorage = canUseDOM
+    ? window.sessionStorage.getItem('validacionBotones')
+    : null
+
   //STATES
-  const [isButtonActive, setIsButtonActive] = useState<boolean>(true);
+  const [isButtonActive, setIsButtonActive] = useState<boolean>(false);
 
   //METHODS
   const calcCloseButtonPosition = (posicion:string) => {
@@ -136,6 +145,30 @@ function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
       }
     }
   }
+  const handleSessionUpdate = () => {
+    if(dataSessionStorage) {
+      const listaBotones = JSON.parse(dataSessionStorage);
+      listaBotones.push(id)
+
+      window.sessionStorage.setItem('validacionBotones', JSON.stringify(listaBotones));
+    }
+
+    setIsButtonActive(false)
+  }
+
+  //EFFECTS
+  useEffect(() => {
+    if(dataSessionStorage) {
+      const listaBotones = JSON.parse(dataSessionStorage)
+
+      if(!listaBotones.includes(id)) {
+        setIsButtonActive(true);
+      }
+    } else {
+      window.sessionStorage.setItem('validacionBotones', JSON.stringify([]))
+      setIsButtonActive(true);
+    }
+  },[dataSessionStorage])
 
   //JSX
   if(isButtonActive) {
@@ -149,7 +182,7 @@ function BotonLayout({imagen, imagenMobile, slug, posicion}:BotonLayoutProps) {
         >
           <p
             className={`${handles.botonesGeneral__itemCloseButtonX}`}
-            onClick={() => setIsButtonActive(false)}
+            onClick={handleSessionUpdate}
           >
             x
           </p>

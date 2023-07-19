@@ -67,6 +67,7 @@ interface TipoConfiguracion {
 }
 
 interface BotonFlotante {
+  id: string
   imagen: string
   imagenMobile?: string
   slug: string
@@ -80,6 +81,7 @@ interface BotonesFlotantesProps {
 }
 
 interface BotonLayoutProps {
+  id: string
   imagen: string
   imagenMobile?: string
   slug: string

@@ -8,6 +8,12 @@ export const botonesFlotantesSchema = {
       type: "array",
       items: {
         properties: {
+          id: {
+            title: "ID Boton",
+            description: "Indique el id con que se identificara al boton, no deje espacios. Ex => 'id-boton'",
+            type: "string",
+            default: ""
+          },
           imagen: {
             title: "Imagen Desktop - Tablet",
             type: "string",
@@ -101,6 +107,12 @@ export const botonesFlotantesSchema = {
       type: "array",
       items: {
         properties: {
+          id: {
+            title: "ID Boton",
+            description: "Indique el id con que se identificara al boton, no deje espacios. Ex => 'id-boton'",
+            type: "string",
+            default: ""
+          },
           imagen: {
             title: "Imagen Desktop - Tablet",
             type: "string",
@@ -194,6 +206,12 @@ export const botonesFlotantesSchema = {
       type: "array",
       items: {
         properties: {
+          id: {
+            title: "ID Boton",
+            description: "Indique el id con que se identificara al boton, no deje espacios. Ex => 'id-boton'",
+            type: "string",
+            default: ""
+          },
           imagen: {
             title: "Imagen Desktop - Tablet",
             type: "string",

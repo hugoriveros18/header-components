@@ -1,0 +1,254 @@
+.drawer {
+  width: auto !important;
+  max-width       : 400px !important;
+  min-width       : auto !important;
+  background-color: #fff;
+}
+
+.drawerHeader {
+  flex: 0 0 auto;
+}
+
+.drawerContent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: unset;
+}
+
+.childrenContainer {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.openIconContainer {
+  padding: 0;
+}
+
+.productosRecomendados__headerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.productosRecomendados__headerImageContainer,
+.productosRecomendados__headerImage {
+  width: 100%;
+  height: 100%;
+}
+
+.productosRecomendados__headerCloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.productosRecomendados__drawerTrigger {
+  position: fixed;
+  bottom: 70px;
+  left: 15px;
+  width: 115px;
+  z-index: 998;
+}
+
+.productosRecomendados__drawerTriggerCloseBtn {
+  position: fixed;
+  bottom: 155px;
+  left: 110px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #353535;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.productosRecomendados__displayNone {
+  display: none;
+}
+
+.productosRecomendados__triggerIcon {
+  width: 100%;
+}
+
+.productosRecomendados__contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.productosRecomendados__titleContent {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 8px 0;
+}
+
+.productosRecomendados__tabsContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.productosRecomendados__tabsListContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 3px;
+  transition: all 300ms;
+}
+
+.productosRecomendados__tabsItem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 25px;
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.productosRecomendados__tabsItemSelected {
+  background-color: #ED5B03;
+  color: white;
+  font-weight: 700;
+}
+
+.productosRecomendados__productsContainer {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.productosRecomendados__loadingSpinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.03);
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}
+
+.productosRecomendados__verTodo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.productosRecomendados__verTodoLink {
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: solid 1px #ec6608;
+  color: #ec6608;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 300ms;
+}
+
+.productosRecomendados__verTodoLink:hover {
+  background-color: #ec6608;
+  color: #fff;
+}
+
+.svg__mainFlame {
+  animation-name: flameWobble;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.mainFlame__one {
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.mainFlame__two {
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.mainFlame__three {
+  animation-duration: 2.1s;
+  animation-delay: 3s;
+}
+
+.mainFlame__four {
+  animation-duration: 3.2s;
+  animation-delay: 4s;
+}
+
+.mainFlame__five {
+  animation-duration: 2.5s;
+  animation-delay: 5s;
+}
+
+.flame__general {
+  animation-name: flamefly;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+}
+
+.flame__generalOne {
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+
+.productosRecomendados__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  padding: 2px;
+  background-color: rgb(236, 102, 8, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid #15253c;
+  cursor: pointer;
+}
+
+.productosRecomendados__leftArrow {
+  left: 5px;
+}
+
+.productosRecomendados__rightArrow {
+  right: 5px;
+}
+
+@keyframes flameWobble {
+  50% {
+    transform: scale(1, 1.11) translate(0, -10px) rotate(-2deg);
+  }
+}
+@keyframes flamefly {
+  0%{
+    transform: translate(0);
+  }
+   50% {
+     opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, -100px);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .drawer {
+    max-width       : 330px !important;
+  }
+}
+

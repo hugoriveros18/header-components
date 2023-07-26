@@ -1,3 +1,4 @@
+// LISTA ENLACES
 type Enlace = {
   _editorItemTitle: string
   texto: string
@@ -8,6 +9,7 @@ type ListaEnlacesProps = {
   listaEnlaces: Enlace[]
 }
 
+//TOP BANNER
 type TopBannerProps = {
   imagenDesktopTablet: string
   imagenMobile: string
@@ -32,6 +34,7 @@ type AnalisisTemporizadorProps = {
   fechaFinal: string
 }
 
+//DESTACADO
 type Destacado = {
   _editorItemTitle: string
   texto: string
@@ -66,6 +69,7 @@ interface TipoConfiguracion {
   estaActivo?: boolean
 }
 
+//BOTONES FLOTANTES
 interface BotonFlotante {
   id: string
   imagen: string
@@ -88,4 +92,61 @@ interface BotonLayoutProps {
   posicion: 'izquierda' | 'derecha' | 'inferior'
 }
 
+//PRODUCTOS RECOMENDADOS
+type OrdenProductos = 'Relevance' | 'Sales' | 'Price, descending' | 'Price, ascending' | 'Name, descending' | 'Name, ascending' | 'Release date' | 'Discount'
+type FiltroSku = 'All available' | 'First available';
+type CuotasMostradas = 'Maximum without interest' | 'Maximum'
+
+interface ContenidoAgrupacionProductosProps {
+  agrupacionActualProductos: AgrupacionProductos | null
+  ProductListContext: any
+}
+
+interface ConfiguracionAgrupacion {
+  categoriaId: string
+  coleccionId: string
+  ordenProductos: OrdenProductos
+  maximoItems: number
+  esconderItemsNoDisponibles: boolean
+  filtroSku: FiltroSku
+  cuotasMostradas: CuotasMostradas
+}
+
+interface AgrupacionProductos {
+  tituloPestaña: string
+  slug: string
+  configuracionAgrupacion: ConfiguracionAgrupacion
+}
+
+interface ConfiguracionDeafultProductos {
+  id: string
+  imagenHeader: string
+  tituloContenido: string
+  pestañas: AgrupacionProductos[]
+}
+
+interface ConfiguracionPersonalizadaProductos extends ConfiguracionDeafultProductos {
+  validacionUrl: string
+}
+
+interface ProductosRecomendadosProps {
+  configuracionDefault: ConfiguracionDeafultProductos
+  configuracionesPersonalizadas: ConfiguracionPersonalizadaProductos[]
+  ProductListContext: any
+}
+
+interface ProductosRecomendadosIconProps {
+  isTriggerVisible: boolean
+}
+
+interface useValidacionProdRecomendadosProps {
+  configuracionDefault: ConfiguracionDeafultProductos
+  configuracionesPersonalizadas: ConfiguracionPersonalizadaProductos[]
+}
+
+interface ListaPestañasProps {
+  configuracionActualProductos: ConfiguracionDeafultProductos | ConfiguracionPersonalizadaProductos | null
+  agrupacionActualProductos: AgrupacionProductos | null
+  handleTabChange: (agrupacionProductos: AgrupacionProductos) => void
+}
 

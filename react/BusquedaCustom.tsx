@@ -1,15 +1,30 @@
 import React from "react";
-import { useSearchPage } from 'vtex.search-page-context/SearchPageContext';
+import { useSearchPage } from 'vtex.search-page-context/SearchPageContext'
 
 export default function BusquedaCustom() {
 
+  //SEARCH CONTEXT
   const searchPage = useSearchPage();
 
   console.log('searchPage', searchPage);
 
   //JSX
   return (
-    <div>BUSQUEDA CUSTOM</div>
+    <></>
   )
 }
+// import React from "react";
+// import { useSearchPage } from 'vtex.search-page-context/SearchPageContext';
+
+// export default function BusquedaCustom() {
+
+//   const searchPage = useSearchPage();
+
+//   console.log('searchPage', searchPage);
+
+//   //JSX
+//   return (
+//     <div>BUSQUEDA CUSTOM</div>
+//   )
+// }
 

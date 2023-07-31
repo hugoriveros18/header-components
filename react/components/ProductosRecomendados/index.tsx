@@ -47,7 +47,7 @@ export default function ProductosRecomendados({
   return(
     <>
       <div
-        className={`${handles.productosRecomendados__drawerTriggerCloseBtn} ${isTriggerVisible ? undefined : handles.productosRecomendados__displayNone}`}
+        className={`${handles.productosRecomendados__drawerTriggerCloseBtn} ${(isTriggerVisible && configuracionActualProductos?.isActive) ? undefined : handles.productosRecomendados__displayNone}`}
         onClick={() => handleCloseTrigger(configuracionActualProductos?.id || '')}
       >
         x
@@ -72,6 +72,7 @@ export default function ProductosRecomendados({
         customIcon={
           <ProductosRecomendadosIcon
             isTriggerVisible={isTriggerVisible}
+            isActive={configuracionActualProductos?.isActive}
           />
         }
       >

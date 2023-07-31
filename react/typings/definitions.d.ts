@@ -122,6 +122,7 @@ interface ConfiguracionDeafultProductos {
   id: string
   imagenHeader: string
   tituloContenido: string
+  isActive: boolean
   pestañas: AgrupacionProductos[]
 }
 
@@ -137,6 +138,7 @@ interface ProductosRecomendadosProps {
 
 interface ProductosRecomendadosIconProps {
   isTriggerVisible: boolean
+  isActive: boolean | undefined
 }
 
 interface useValidacionProdRecomendadosProps {

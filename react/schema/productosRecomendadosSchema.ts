@@ -25,6 +25,11 @@ export const productosRecomendadosSchema = {
           type: "string",
           default: ""
         },
+        isActive: {
+          title: "¿Esta Activo?",
+          type: "boolean",
+          default: true
+        },
         pestañas: {
           title: "Pestañas",
           type: "array",
@@ -146,6 +151,11 @@ export const productosRecomendadosSchema = {
             title: "Titulo de Contenido",
             type: "string",
             default: ""
+          },
+          isActive: {
+            title: "¿Esta Activo?",
+            type: "boolean",
+            default: true
           },
           pestañas: {
             title: "Pestañas",

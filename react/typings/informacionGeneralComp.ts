@@ -23,6 +23,7 @@ export const configuracionDefaultTest:ConfiguracionDeafultProductos = {
   "id": "configuracion-default",
   "imagenHeader": "https://panamericana.vteximg.com.br/arquivos/banner-boton-recomendados.png",
   "tituloContenido": "Recomendaciones",
+  "isActive": true,
   "pestañas": [
     {
       "tituloPestaña": "Libros",

@@ -15,7 +15,10 @@ const CSS_HANDLES = [
   'flame__generalOne',
 ]
 
-export default function ProductosRecomendadosIcon({isTriggerVisible}:ProductosRecomendadosIconProps) {
+export default function ProductosRecomendadosIcon({
+  isTriggerVisible,
+  isActive = true
+}:ProductosRecomendadosIconProps) {
 
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
@@ -30,7 +33,7 @@ export default function ProductosRecomendadosIcon({isTriggerVisible}:ProductosRe
       x={0}
       y={0}
       viewBox="0 0 139.3 147"
-      className={`${handles.productosRecomendados__drawerTrigger} ${isTriggerVisible ? undefined : handles.productosRecomendados__displayNone}`}
+      className={`${handles.productosRecomendados__drawerTrigger} ${(isTriggerVisible && isActive) ? undefined : handles.productosRecomendados__displayNone}`}
     >
       <style>{".st1{fill:#ff7900}.st3{fill:#fdba16}.st5{fill:#f36e21}"}</style>
       <ellipse

@@ -16,9 +16,6 @@
     "component": "ProductosRecomendados",
     "render": "client"
   },
-  "search-custom": {
-    "component": "BusquedaCustom"
-  },
   "reviews-summary": {
     "component": "ReviewsLibros",
     "render": "client"

@@ -39,25 +39,22 @@ type Destacado = {
   _editorItemTitle: string
   texto: string
   slug: string
-}
-
-type DestacadoProps = {
-  destacados: Destacado[]
   colorFondo: string
   colorTexto: string
   colorFondoHover: string
   colorTextoHover: string
   colorLineaDivisoria: string
+  colorFondoLineaDivisoria: string
+}
+
+type DestacadoProps = {
+  destacados: Destacado[]
 }
 
 type DestacadoLinkProps = {
   destacado: Destacado
   destacadosLength: number
   index: number
-  colorTexto: string
-  colorFondoHover: string
-  colorTextoHover: string
-  colorLineaDivisoria: string
 }
 
 type PosiblesConfiguraciones = 'Por Fechas' | 'Activacion Manual'

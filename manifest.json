@@ -1,7 +1,7 @@
 {
   "vendor": "panamericana",
   "name": "header-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "title": "Header Components",
   "description": "General header components",
   "builders": {

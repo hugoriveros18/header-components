@@ -14,13 +14,9 @@ const CSS_HANDLES = [
 export default function DestacadoLink({
   destacado,
   destacadosLength,
-  index,
-  colorFondoHover,
-  colorTexto,
-  colorTextoHover,
-  colorLineaDivisoria
+  index
 }:DestacadoLinkProps) {
-  
+
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
@@ -36,11 +32,14 @@ export default function DestacadoLink({
         className={handles.destacados__linkElement}
         onMouseEnter={() => setIsHoverActive(true)}
         onMouseLeave={() => setIsHoverActive(false)}
+        style={{
+          backgroundColor: destacado.colorFondo,
+        }}
       >
         <div
           className={handles.destacados__fondoDinamico}
           style={{
-            backgroundColor: colorFondoHover,
+            backgroundColor: destacado.colorFondoHover,
             transform: isHoverActive ? 'scale(1, 1)' : 'scale(0, 0)'
           }}
         >
@@ -48,7 +47,7 @@ export default function DestacadoLink({
         <p
           className={`${handles.destacados__linkElementText}`}
           style={{
-            color: isHoverActive ? colorTextoHover : colorTexto
+            color: isHoverActive ? destacado.colorTextoHover : destacado.colorTexto
           }}
         >
           {destacado.texto}
@@ -59,11 +58,14 @@ export default function DestacadoLink({
         ?
           <div
             className={handles.destacados__divisionContainer}
+            style={{
+              backgroundColor: destacado.colorFondoLineaDivisoria
+            }}
           >
             <div
               className={handles.destacados__divisionLine}
               style={{
-                backgroundColor: colorLineaDivisoria
+                backgroundColor: destacado.colorLineaDivisoria
               }}
             ></div>
           </div>

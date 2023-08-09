@@ -12,22 +12,29 @@ const destacadosDefault: Destacado[] = [
   {
     _editorItemTitle: 'Juguetes',
     texto: 'Juguetes',
-    slug: '/juegos-y-juguetes'
+    slug: '/juegos-y-juguetes',
+    colorFondo: '#faa060',
+    colorFondoHover: '#ffffff',
+    colorTexto: '#ffffff',
+    colorTextoHover: "#ec6608",
+    colorLineaDivisoria: '#ffffff',
+    colorFondoLineaDivisoria: '#faa060'
   },
   {
     _editorItemTitle: 'Centro Cultural',
     texto: 'Centro Cultural',
-    slug: '/centro-cultural-y-empresarial?utmi_pc=centro-cultural-y-empresarial-icono-menu&utmi_p=icono-menu-centro-cultural-y-empresarial-2-febrero-2023'
+    slug: '/centro-cultural-y-empresarial?utmi_pc=centro-cultural-y-empresarial-icono-menu&utmi_p=icono-menu-centro-cultural-y-empresarial-2-febrero-2023',
+    colorFondo: '#faa060',
+    colorFondoHover: '#ffffff',
+    colorTexto: '#ffffff',
+    colorTextoHover: "#ec6608",
+    colorLineaDivisoria: '#ffffff',
+    colorFondoLineaDivisoria: '#faa060'
   }
 ]
 
 export default function Destacado({
-  destacados = destacadosDefault,
-  colorFondo = '#faa060',
-  colorFondoHover = '#ffffff',
-  colorTexto = '#ffffff',
-  colorTextoHover = "#ec6608",
-  colorLineaDivisoria = '#ffffff'
+  destacados = destacadosDefault
 }:DestacadoProps) {
 
   //CSS HANDLES
@@ -37,9 +44,6 @@ export default function Destacado({
   return (
     <div
       className={handles.destacados__generalContainer}
-      style={{
-        backgroundColor: colorFondo,
-      }}
     >
       {
         destacados.map((destacado, index) => {
@@ -49,10 +53,6 @@ export default function Destacado({
               destacado={destacado}
               destacadosLength={destacados.length}
               index={index}
-              colorFondoHover={colorFondoHover}
-              colorTexto={colorTexto}
-              colorTextoHover={colorTextoHover}
-              colorLineaDivisoria={colorLineaDivisoria}
             />
           )
         })

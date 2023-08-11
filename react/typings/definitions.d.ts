@@ -149,3 +149,25 @@ interface ListaPestañasProps {
   handleTabChange: (agrupacionProductos: AgrupacionProductos) => void
 }
 
+//BANNERS SLIDER HEADER
+type PosiblesConfiguraciones = 'Por Fechas' | 'Activacion Manual'
+
+type TipoConfiguracion = {
+  posiblesConfiguraciones: PosiblesConfiguraciones
+  fechaInicio?: string
+  fechaFinal?: string
+  estaActivo?: boolean
+}
+
+type BannerPrincipal = {
+  imagenDesktop: string
+  imagenMobile: string
+  urlRedireccion: string
+  tipoConfiguracion: TipoConfiguracion
+}
+
+type BannersSliderHeaderProps = {
+  banners: BannerPrincipal[]
+  children: ReactNode
+}
+

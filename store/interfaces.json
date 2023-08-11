@@ -19,5 +19,11 @@
   "reviews-summary": {
     "component": "ReviewsLibros",
     "render": "client"
+  },
+  "banners-slider-header": {
+    "component": "BannersSliderHeader",
+    "composition": "children",
+    "allowed": "*",
+    "render": "client"
   }
 }

@@ -12,6 +12,10 @@
     "component": "BotonesFlotantes",
     "render": "client"
   },
+  "boton-whatsapp": {
+    "component": "BotonWhatsapp",
+    "render": "client"
+  },
   "productos-recomendados": {
     "component": "ProductosRecomendados",
     "render": "client"

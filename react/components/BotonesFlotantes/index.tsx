@@ -129,19 +129,15 @@ function BotonLayout({id, imagen, imagenMobile, slug, posicion}:BotonLayoutProps
 
   //METHODS
   const calcCloseButtonPosition = (posicion:string) => {
-    if(posicion === 'izquierda') {
-      return {
-        left: '0'
-      }
-    } else if (posicion === 'derecha') {
-      return {
-        right: '0'
-      }
-    } else {
+    if(posicion === 'inferior') {
       return {
         right: '10px',
         top: '-2px',
         transform: 'translateY(-100%)'
+      }
+    } else {
+      return {
+        right: '0'
       }
     }
   }

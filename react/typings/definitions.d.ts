@@ -119,6 +119,7 @@ interface ConfiguracionDeafultProductos {
   id: string
   imagenHeader: string
   tituloContenido: string
+  textoHover: string
   isActive: boolean
   pestañas: AgrupacionProductos[]
 }
@@ -136,6 +137,7 @@ interface ProductosRecomendadosProps {
 interface ProductosRecomendadosIconProps {
   isTriggerVisible: boolean
   isActive: boolean | undefined
+  setIsHoverActive: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface useValidacionProdRecomendadosProps {
@@ -170,4 +172,20 @@ type BannersSliderHeaderProps = {
   banners: BannerPrincipal[]
   children: ReactNode
 }
+
+//BOTON WHATSAPP
+type PosicionBotonWhatsapp = 'Izquierda' | 'Derecha'
+
+interface BotonWhatsappProps {
+  iconoDesktop: string
+  iconoMobile: string
+  slug: string
+  textoBoton: string
+  colorFondo: string
+  colorTexto: string
+  posicionBoton: PosicionBotonWhatsapp
+  tipoConfiguracion: TipoConfiguracion
+}
+
+
 

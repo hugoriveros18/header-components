@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCssHandles } from 'vtex.css-handles';
 import { Drawer, DrawerHeader, DrawerCloseButton } from 'vtex.store-drawer';
 import useValidacionProdRecomendados from '../../hooks/useValidacionProdRecomendados';
@@ -23,6 +23,9 @@ const CSS_HANDLES = [
   'productosRecomendados__tabsListContainer',
   'productosRecomendados__tabsItem',
   'productosRecomendados__tabsItemSelected',
+  'productosRecomendados__drawerTriggerHover',
+  'drawerTriggerHover__in',
+  'drawerTriggerHover__out'
 ]
 
 export default function ProductosRecomendados({
@@ -33,6 +36,9 @@ export default function ProductosRecomendados({
 
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
+
+  //STATES
+  const [isHoverActive, setIsHoverActive] = useState<boolean>(false);
 
   //VALIDACION PRODUCTOS RECOMENDADOS
   const {
@@ -51,6 +57,11 @@ export default function ProductosRecomendados({
         onClick={() => handleCloseTrigger(configuracionActualProductos?.id || '')}
       >
         x
+      </div>
+      <div
+        className={`${handles.productosRecomendados__drawerTriggerHover} ${isHoverActive ? handles.drawerTriggerHover__in : handles.drawerTriggerHover__out}`}
+      >
+        {configuracionActualProductos?.textoHover}
       </div>
       <Drawer
         header={
@@ -73,6 +84,7 @@ export default function ProductosRecomendados({
           <ProductosRecomendadosIcon
             isTriggerVisible={isTriggerVisible}
             isActive={configuracionActualProductos?.isActive}
+            setIsHoverActive={setIsHoverActive}
           />
         }
       >

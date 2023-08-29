@@ -3,6 +3,12 @@ import { useListContext, ListContextProvider } from 'vtex.list-context';
 import { useDevice } from 'vtex.device-detector';
 import { Image } from 'vtex.store-image';
 import { bannersSliderHeaderSchema } from '../../schema/bannersSliderHeader';
+import { useCssHandles } from 'vtex.css-handles';
+import './styles.css';
+
+const CSS_HANDLES = [
+  'header__singleImageSlider'
+];
 
 const defaultData: BannerPrincipal[] = [
   {
@@ -24,21 +30,31 @@ export default function BannersSliderHeader({
   //LIST CONTEXT
   const { list } = useListContext() || [];
 
+  //CSS HANDLES
+  const handles = useCssHandles(CSS_HANDLES);
+
   //VALIDACIONES
   const grupoBanners = ValidacionBannersHeader(banners);
   let bannerParaVisualizar = [];
   bannerParaVisualizar = list.concat(grupoBanners.filter(banner => banner !== null));
 
   //JSX
-  if (bannerParaVisualizar.length > 0) {
+  if (bannerParaVisualizar.length > 1) {
     return (
       <ListContextProvider list={bannerParaVisualizar}>
         {children}
       </ListContextProvider>
     )
+  } else if (bannerParaVisualizar.length === 1) {
+    return (
+      <div className={handles.header__singleImageSlider}>
+        {bannerParaVisualizar}
+      </div>
+    )
+  } else {
+    return null
   }
 
-  return null
 }
 
 BannersSliderHeader.schema = bannersSliderHeaderSchema;

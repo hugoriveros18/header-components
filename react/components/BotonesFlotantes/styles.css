@@ -51,6 +51,10 @@
   cursor: pointer;
 }
 
+.botonesGeneral__itemImage {
+  width: 100%;
+}
+
 @media screen and (max-width: 1500px) {
   .botonesIzquiera__listContainer,
   .botonesDerecha__listContainer {
